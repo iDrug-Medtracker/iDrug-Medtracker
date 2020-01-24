@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">iDrug.01</string>
+
+    <string name="button_cancel">Cancel</string>
+    <string name="button_set_time">Set Time</string>
+    <string name="header_calendar_view">Please select the day you will be taking your medication</string>
+    <string name="button_accept">Add to Calendar</string>
+    <string name="textView_repeat_every">Repeat the alarm every:</string>
+
+    <string-array name="array_repeat_time">
+        <item>Day</item>
+        <item>Week</item>
+        <item>Month</item>
+        <item>Year</item>
+    </string-array>
 </resources>
