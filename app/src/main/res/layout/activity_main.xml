@@ -32,11 +32,11 @@
         app:srcCompat="@mipmap/day_foreground" />
 
     <ProgressBar
-        android:id="@+id/textView"
+        android:id="@+id/circulo"
         style="?android:progressBarStyleHorizontal"
         android:layout_width="350dp"
         android:layout_height="380dp"
-        android:progress="45"
+        android:progress="0"
         android:progressDrawable="@drawable/circle"
         android:scaleX="-1"
         app:layout_constraintBottom_toBottomOf="@+id/imageView4"
@@ -56,6 +56,17 @@
         app:srcCompat="@mipmap/pill_round" />
 
     <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="47dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="144dp"
+        android:layout_marginEnd="292dp"
+        android:layout_marginRight="292dp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView4"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/pill_round" />
+
+    <ImageView
         android:id="@+id/imageView8"
         android:layout_width="47dp"
         android:layout_height="46dp"
@@ -64,18 +75,6 @@
         android:layout_marginBottom="140dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView4"
         app:layout_constraintEnd_toEndOf="@+id/imageView4"
-        app:srcCompat="@mipmap/pill_round" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="47dp"
-        android:layout_height="46dp"
-        android:layout_marginEnd="300dp"
-        android:layout_marginRight="300dp"
-        android:layout_marginBottom="344dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
-        app:layout_constraintEnd_toEndOf="@+id/imageView4"
-        app:layout_constraintTop_toTopOf="@+id/textView"
         app:srcCompat="@mipmap/pill_round" />
 
     <ImageView
@@ -96,11 +95,11 @@
         android:text="TextView"
         android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/textView"
-        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintBottom_toBottomOf="@+id/circulo"
+        app:layout_constraintEnd_toEndOf="@+id/circulo"
         app:layout_constraintHorizontal_bias="0.527"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toTopOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/circulo"
+        app:layout_constraintTop_toTopOf="@+id/circulo"
         app:layout_constraintVertical_bias="0.471" />
 
     <Button
