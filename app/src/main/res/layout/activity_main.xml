@@ -28,7 +28,7 @@
         app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.073"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@mipmap/day_foreground" />
 
     <ProgressBar
@@ -80,7 +80,7 @@
     <ImageView
         android:id="@+id/imageView9"
         android:layout_width="47dp"
-        android:layout_height="46dp"
+        android:layout_height="47dp"
         android:layout_marginStart="60dp"
         android:layout_marginLeft="60dp"
         android:layout_marginBottom="140dp"
@@ -95,20 +95,21 @@
         android:text="TextView"
         android:textSize="30sp"
         android:textStyle="bold"
+        android:typeface="serif"
         app:layout_constraintBottom_toBottomOf="@+id/circulo"
         app:layout_constraintEnd_toEndOf="@+id/circulo"
-        app:layout_constraintHorizontal_bias="0.527"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/circulo"
         app:layout_constraintTop_toTopOf="@+id/circulo"
-        app:layout_constraintVertical_bias="0.471" />
+        app:layout_constraintVertical_bias="0.5" />
 
     <Button
         android:id="@+id/buttonCalendar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginLeft="28dp"
-        android:layout_marginBottom="36dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginBottom="40dp"
         android:text="Calendar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
