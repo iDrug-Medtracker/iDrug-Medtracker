@@ -2,7 +2,10 @@ package com.example.idrug01;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -14,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ProgressBar progressBar;
     private int progressStatus = 0;
+    private ImageButton button1;
 
     //not used, example function for eric
     public static int extractHourOfDayFromMS(long ms) {
@@ -37,6 +41,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        button1 = (ImageButton) findViewById(R.id.buttonnewpill);
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openNewPillForm();
+            }
+        });
+
         progressBar = (ProgressBar) findViewById(R.id.circulo);
         //to get a clock
         Thread t = new Thread() {
@@ -64,8 +77,15 @@ public class MainActivity extends AppCompatActivity {
                     }
                 } catch (InterruptedException e) {
                 }
+
+
             }
         };
         t.start();
+    }
+
+    public void openNewPillForm(){
+        Intent intent = new Intent(this, NewPillActivity.class);
+        startActivity(intent);
     }
 }
