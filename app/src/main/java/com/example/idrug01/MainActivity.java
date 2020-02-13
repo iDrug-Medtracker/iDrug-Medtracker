@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
                             public void run() {
                                 TextView tdate = findViewById(R.id.date);
                                 long date = System.currentTimeMillis();
-                                SimpleDateFormat sdf = new SimpleDateFormat("h:mm a");
+                                SimpleDateFormat sdf = new SimpleDateFormat("hh:mm a");
                                 String dateString = sdf.format(date);
                                 tdate.setText(dateString);
 
