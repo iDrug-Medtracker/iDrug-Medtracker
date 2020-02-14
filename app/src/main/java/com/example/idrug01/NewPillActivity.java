@@ -29,6 +29,7 @@ public class NewPillActivity extends AppCompatActivity {
     private int dosage;
     private int period;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -100,12 +101,14 @@ public class NewPillActivity extends AppCompatActivity {
                 int minute = c.get(Calendar.MINUTE);
 
 
+
                 TimePickerDialog timePickerDialog = new TimePickerDialog(NewPillActivity.this,
                         new TimePickerDialog.OnTimeSetListener() {
 
                             @Override
                             public void onTimeSet(TimePicker view, int hourOfDay,
                                                   int minute) {
+
                                 String am_pm = "PM";
                                 if (hourOfDay<12){
                                     am_pm = "AM";
