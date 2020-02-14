@@ -6,6 +6,7 @@
     <string name="header_calendar_view">Please select the day you will be taking your medication</string>
     <string name="button_accept">Add to Calendar</string>
     <string name="textView_repeat_every">Repeat the alarm every:</string>
+    <string name="main_menu">Main Menu</string>
 
     <string-array name="array_repeat_time">
         <item>Day</item>
