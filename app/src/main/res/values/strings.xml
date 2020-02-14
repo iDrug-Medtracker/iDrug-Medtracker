@@ -7,6 +7,7 @@
     <string name="button_accept">Add to Calendar</string>
     <string name="textView_repeat_every">Repeat the alarm every:</string>
     <string name="main_menu">Main Menu</string>
+    <string name="time_display">00:00 AM/PM</string>
 
     <string-array name="array_repeat_time">
         <item>Day</item>

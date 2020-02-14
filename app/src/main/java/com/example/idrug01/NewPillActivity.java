@@ -3,6 +3,10 @@ package com.example.idrug01;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import java.util.Calendar;
+import android.app.TimePickerDialog;
+import android.content.Context;
+import android.widget.TimePicker;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -10,6 +14,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -81,7 +86,59 @@ public class NewPillActivity extends AppCompatActivity {
                 saveData();
             }
         });
+
+        final TextView timeTextView = findViewById(R.id.time_display);
+
+        Button timePicker = findViewById(R.id.button_setTime);
+        timePicker.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                // Get Current time
+                final Calendar c = Calendar.getInstance();
+                int hour = c.get(Calendar.HOUR_OF_DAY);
+                int minute = c.get(Calendar.MINUTE);
+
+
+                TimePickerDialog timePickerDialog = new TimePickerDialog(NewPillActivity.this,
+                        new TimePickerDialog.OnTimeSetListener() {
+
+                            @Override
+                            public void onTimeSet(TimePicker view, int hourOfDay,
+                                                  int minute) {
+                                String am_pm = "PM";
+                                if (hourOfDay<12){
+                                    am_pm = "AM";
+                                }
+                                if (hourOfDay>12){
+                                    hourOfDay=hourOfDay-12;
+                                    am_pm = "PM";
+                                }
+                                if (hourOfDay==0){
+                                    hourOfDay=12;
+                                }
+
+
+                                String min = "";
+                                if (minute<10){
+                                    min="0";
+                                }
+                                min = min + String.valueOf(minute);
+
+                                timeTextView.setText(hourOfDay + ":" + min + " " + am_pm);
+                                //timeTextView.setText(getString(R.string.time, hourOfDay, minute));
+                            }
+                        }, hour, minute, false);
+                timePickerDialog.show();
+            }
+        });
+
     }
+
+
+
+
+
     private void saveData() {
         SharedPreferences sharedPreferences = getSharedPreferences("shared preferences", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
