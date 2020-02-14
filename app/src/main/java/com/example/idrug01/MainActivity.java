@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private ProgressBar progressBar;
     private int progressStatus = 0;
     private ImageButton button1;
-    private Button button2;
+    private Button calend;
     ArrayList<medication> medList;
 
 
@@ -44,8 +44,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        button2 = findViewById(R.id.buttonCalendar);
-        button2.setOnClickListener(new View.OnClickListener() {
+        calend = findViewById(R.id.buttonCalendar);
+        calend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openCalendar();
