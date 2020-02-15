@@ -2,10 +2,8 @@ package com.example.idrug01;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import java.util.Calendar;
 import android.app.TimePickerDialog;
-import android.content.Context;
 import android.widget.TimePicker;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -33,24 +31,9 @@ public class NewPillActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_new_pill_form);
+        setContentView(R.layout.activity_newpill);
         //load medList with function created bellow
         loadData();
-
-        //just to see if medList is working display all its content
-        TextView DisplayStringArray = findViewById(R.id.lista);
-        DisplayStringArray.setTextSize(15);
-        for (int i=0; i<medList.size();i++) {
-            DisplayStringArray.append(medList.get(i).name);
-            DisplayStringArray.append(" ");
-            DisplayStringArray.append(medList.get(i).times);
-            DisplayStringArray.append(" ");
-            DisplayStringArray.append(String.valueOf(medList.get(i).dosage));
-            DisplayStringArray.append(" ");
-            DisplayStringArray.append(String.valueOf(medList.get(i).period));
-            DisplayStringArray.append("\n");
-
-        }
 
         //buttonDone should add the new medication and save ArrayList
         Button buttonDone = findViewById(R.id.but_done);
@@ -59,10 +42,12 @@ public class NewPillActivity extends AppCompatActivity {
             public void onClick(View v) {
                 EditText et1 = findViewById(R.id.editName);
                 name = et1.getEditableText().toString();
-                EditText et2 = findViewById(R.id.editTimes);
-                times = et2.getEditableText().toString();
+
+                TextView et2 = findViewById(R.id.time_display);
+                times = et2.getText().toString();
+
                 EditText et3 = findViewById(R.id.editDosage);
-                //check fot integers or it crashes
+                //check for integers or it crashes
                 try {
                     dosage = Integer.parseInt(et3.getEditableText().toString());
                 } catch (NumberFormatException e) {
@@ -87,7 +72,9 @@ public class NewPillActivity extends AppCompatActivity {
                 saveData();
             }
         });
-
+        ///////////////////////////////////////////////////////////
+        //-------------------------Times---------------------------
+        ///////////////////////////////////////////////////////////
         final TextView timeTextView = findViewById(R.id.time_display);
 
         Button timePicker = findViewById(R.id.button_setTime);
@@ -109,27 +96,13 @@ public class NewPillActivity extends AppCompatActivity {
                             public void onTimeSet(TimePicker view, int hourOfDay,
                                                   int minute) {
 
-                                String am_pm = "PM";
-                                if (hourOfDay<12){
-                                    am_pm = "AM";
-                                }
-                                if (hourOfDay>12){
-                                    hourOfDay=hourOfDay-12;
-                                    am_pm = "PM";
-                                }
-                                if (hourOfDay==0){
-                                    hourOfDay=12;
-                                }
-
-
                                 String min = "";
                                 if (minute<10){
                                     min="0";
                                 }
-                                min = min + String.valueOf(minute);
+                                min = min + minute;
 
-                                timeTextView.setText(hourOfDay + ":" + min + " " + am_pm);
-                                //timeTextView.setText(getString(R.string.time, hourOfDay, minute));
+                                timeTextView.append("(" + hourOfDay + ":" + min + ")");
                             }
                         }, hour, minute, false);
                 timePickerDialog.show();
@@ -137,8 +110,6 @@ public class NewPillActivity extends AppCompatActivity {
         });
 
     }
-
-
 
 
 

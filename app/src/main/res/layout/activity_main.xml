@@ -15,6 +15,7 @@
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="20dp"
+        android:scaleType="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@mipmap/pill_round" />
@@ -92,7 +93,7 @@
         android:id="@+id/date"
         android:layout_width="120dp"
         android:layout_height="35dp"
-        android:text="TextView"
+        android:text="@string/app_name"
         android:textSize="24sp"
         android:textStyle="bold"
         android:typeface="serif"
@@ -109,7 +110,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginLeft="30dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="30dp"
         android:text="Calendar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
