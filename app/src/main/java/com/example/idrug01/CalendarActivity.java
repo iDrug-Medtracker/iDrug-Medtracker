@@ -1,6 +1,8 @@
 package com.example.idrug01;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -13,7 +15,10 @@ import com.google.gson.reflect.TypeToken;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 
-public class Calendar extends AppCompatActivity {
+public class CalendarActivity extends AppCompatActivity {
+    private RecyclerView myRecycler;
+    private RecyclerView.Adapter myAdapter;
+    private RecyclerView.LayoutManager myLayoutManager;
     ArrayList<medication> medList;
 
     @Override
@@ -24,8 +29,16 @@ public class Calendar extends AppCompatActivity {
         //load medList with function created bellow
         loadData();
 
-        //just to see if medList is working display all its content
+        myRecycler = findViewById(R.id.recyclerView);
+        myRecycler.setHasFixedSize(true);
+        myLayoutManager = new LinearLayoutManager(this);
+        myAdapter = new RecyclerAdapter(medList);
 
+        myRecycler.setLayoutManager(myLayoutManager);
+        myRecycler.setAdapter(myAdapter);
+
+        //just to see if medList is working display all its content
+/*
         TextView DisplayStringArray = findViewById(R.id.lista);
         DisplayStringArray.setTextSize(15);
         for (int i=0; i<medList.size();i++) {
@@ -37,9 +50,8 @@ public class Calendar extends AppCompatActivity {
             DisplayStringArray.append(" ");
             DisplayStringArray.append(medList.get(i).times);
             DisplayStringArray.append("\n");
-
         }
-
+*/
     }
     private void saveData() {
         SharedPreferences sharedPreferences = getSharedPreferences("shared preferences", MODE_PRIVATE);

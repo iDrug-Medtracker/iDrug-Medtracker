@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="7dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="4dp"
+        >
+
+        <ImageView
+            android:id="@+id/imageRec"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:padding="5dp"
+            app:srcCompat="@mipmap/pill_round"
+            tools:srcCompat="@mipmap/pill_round" />
+
+        <TextView
+            android:id="@+id/medicationView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="line1"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/imageRec"
+            android:layout_toRightOf="@+id/imageRec"/>
+
+        <TextView
+            android:id="@+id/timesView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/medicationView"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="14dp"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="27dp"
+            android:layout_toEndOf="@+id/imageRec"
+            android:layout_toRightOf="@+id/imageRec"
+            android:text="line2"
+            android:textColor="@android:color/black"
+            android:textSize="20sp" />
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
