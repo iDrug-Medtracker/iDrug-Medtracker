@@ -12,8 +12,8 @@
         style="@style/Widget.AppCompat.ImageButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginEnd="23dp"
+        android:layout_marginRight="23dp"
         android:layout_marginBottom="20dp"
         android:scaleType="center"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -49,44 +49,87 @@
         android:id="@+id/imageView7"
         android:layout_width="47dp"
         android:layout_height="46dp"
-        android:layout_marginTop="136dp"
-        android:layout_marginEnd="84dp"
-        android:layout_marginRight="84dp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView4"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="67dp"
+        android:layout_marginEnd="53dp"
+        android:layout_marginRight="53dp"
+        app:layout_constraintEnd_toEndOf="@+id/circulo"
+        app:layout_constraintTop_toTopOf="@+id/circulo"
+        app:srcCompat="@mipmap/pill_round" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="47dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/circulo"
+        app:layout_constraintStart_toStartOf="@+id/circulo"
+        app:layout_constraintTop_toTopOf="@+id/circulo"
+        app:srcCompat="@mipmap/pill_round" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="47dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="25dp"
+        app:layout_constraintEnd_toEndOf="@+id/circulo"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="@+id/circulo"
+        app:layout_constraintTop_toTopOf="@+id/circulo"
+        app:srcCompat="@mipmap/pill_round" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="47dp"
+        android:layout_height="46dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/circulo"
+        app:layout_constraintEnd_toEndOf="@+id/circulo"
+        app:layout_constraintTop_toTopOf="@+id/circulo"
+        app:srcCompat="@mipmap/pill_round" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="47dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="25dp"
+        app:layout_constraintBottom_toBottomOf="@+id/circulo"
+        app:layout_constraintEnd_toEndOf="@+id/circulo"
+        app:layout_constraintStart_toStartOf="@+id/circulo"
         app:srcCompat="@mipmap/pill_round" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="47dp"
         android:layout_height="46dp"
-        android:layout_marginTop="144dp"
-        android:layout_marginEnd="292dp"
-        android:layout_marginRight="292dp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView4"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="53dp"
+        android:layout_marginLeft="53dp"
+        android:layout_marginTop="66dp"
+        app:layout_constraintStart_toStartOf="@+id/circulo"
+        app:layout_constraintTop_toTopOf="@+id/circulo"
         app:srcCompat="@mipmap/pill_round" />
 
     <ImageView
         android:id="@+id/imageView8"
         android:layout_width="47dp"
         android:layout_height="46dp"
-        android:layout_marginEnd="60dp"
-        android:layout_marginRight="60dp"
-        android:layout_marginBottom="140dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
-        app:layout_constraintEnd_toEndOf="@+id/imageView4"
+        android:layout_marginEnd="53dp"
+        android:layout_marginRight="53dp"
+        android:layout_marginBottom="67dp"
+        app:layout_constraintBottom_toBottomOf="@+id/circulo"
+        app:layout_constraintEnd_toEndOf="@+id/circulo"
         app:srcCompat="@mipmap/pill_round" />
 
     <ImageView
         android:id="@+id/imageView9"
         android:layout_width="47dp"
         android:layout_height="47dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginLeft="60dp"
-        android:layout_marginBottom="140dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
-        app:layout_constraintStart_toStartOf="@+id/imageView4"
+        android:layout_marginStart="52dp"
+        android:layout_marginLeft="52dp"
+        android:layout_marginBottom="67dp"
+        app:layout_constraintBottom_toBottomOf="@+id/circulo"
+        app:layout_constraintStart_toStartOf="@+id/circulo"
         app:srcCompat="@mipmap/pill_round" />
 
     <TextView
@@ -108,9 +151,9 @@
         android:id="@+id/buttonCalendar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginLeft="27dp"
+        android:layout_marginBottom="22dp"
         android:text="Calendar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

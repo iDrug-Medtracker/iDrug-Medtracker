@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="3dip"
+    android:layout_marginBottom="3dip"
+    app:cardBackgroundColor="#660096E1"
     app:cardCornerRadius="7dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="4dp"
-        >
+        android:background="#B364DCB4">
 
         <ImageView
             android:id="@+id/imageRec"
@@ -24,12 +27,12 @@
             android:id="@+id/medicationView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="line1"
-            android:textColor="@android:color/black"
-            android:textSize="20sp"
             android:layout_alignParentTop="true"
             android:layout_toEndOf="@+id/imageRec"
-            android:layout_toRightOf="@+id/imageRec"/>
+            android:layout_toRightOf="@+id/imageRec"
+            android:text="line1"
+            android:textColor="@android:color/black"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/timesView"
