@@ -7,7 +7,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.widget.TextView;
+import android.view.View;
+import android.widget.Button;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -17,7 +18,7 @@ import java.util.ArrayList;
 
 public class CalendarActivity extends AppCompatActivity {
     private RecyclerView myRecycler;
-    private RecyclerView.Adapter myAdapter;
+    private RecyclerAdapter myAdapter;
     private RecyclerView.LayoutManager myLayoutManager;
     ArrayList<medication> medList;
 
@@ -28,30 +29,17 @@ public class CalendarActivity extends AppCompatActivity {
 
         //load medList with function created bellow
         loadData();
+        buildRecyclerView();
 
-        myRecycler = findViewById(R.id.recyclerView);
-        myRecycler.setHasFixedSize(true);
-        myLayoutManager = new LinearLayoutManager(this);
-        myAdapter = new RecyclerAdapter(medList);
+        Button buttonReset = findViewById(R.id.save);
+        buttonReset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                saveData();
+                openHome();
+            }
+        });
 
-        myRecycler.setLayoutManager(myLayoutManager);
-        myRecycler.setAdapter(myAdapter);
-
-        //just to see if medList is working display all its content
-/*
-        TextView DisplayStringArray = findViewById(R.id.lista);
-        DisplayStringArray.setTextSize(15);
-        for (int i=0; i<medList.size();i++) {
-            DisplayStringArray.append(medList.get(i).name);
-            DisplayStringArray.append(" ");
-            DisplayStringArray.append(String.valueOf(medList.get(i).dosage));
-            DisplayStringArray.append(" ");
-            DisplayStringArray.append(String.valueOf(medList.get(i).period));
-            DisplayStringArray.append(" ");
-            DisplayStringArray.append(medList.get(i).times);
-            DisplayStringArray.append("\n");
-        }
-*/
     }
     private void saveData() {
         SharedPreferences sharedPreferences = getSharedPreferences("shared preferences", MODE_PRIVATE);
@@ -76,4 +64,22 @@ public class CalendarActivity extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
+
+    public void buildRecyclerView(){
+        myRecycler = findViewById(R.id.recyclerView);
+        myRecycler.setHasFixedSize(true);
+        myLayoutManager = new LinearLayoutManager(this);
+        myAdapter = new RecyclerAdapter(medList);
+
+        myRecycler.setLayoutManager(myLayoutManager);
+        myRecycler.setAdapter(myAdapter);
+        myAdapter.setOnItemClickListener(new RecyclerAdapter.OnItemClickListener() {
+            @Override
+            public void onDeleteClick(int position) {
+                medList.remove(position);
+                myAdapter.notifyItemRemoved(position);
+            }
+        });
+    }
+
 }

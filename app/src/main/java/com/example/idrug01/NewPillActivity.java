@@ -64,14 +64,7 @@ public class NewPillActivity extends AppCompatActivity {
                 openHome();
             }
         });
-        Button buttonReset = findViewById(R.id.reset);
-        buttonReset.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                medList.clear();
-                saveData();
-            }
-        });
+
         ///////////////////////////////////////////////////////////
         //-------------------------Times---------------------------
         ///////////////////////////////////////////////////////////
